@@ -5,4 +5,5 @@ Angular 2 Component for lazy loading of Trumbowyg wysiwyg editor with [loadjs](h
 # Run
 ```
 npm install
+typings install
 npm start

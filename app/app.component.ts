@@ -5,7 +5,7 @@ import {Trumbowyg} from "ng2-lazy-trumbowyg";
     selector: 'my-app',
     template: `
     <h1>Angular 2 Trumbowyg Example</h1>
-    <trumbowyg [togglePreview]="showPreview" [initialContent]="initialContent" [update]="update$" (savedContent)="content=$event"></trumbowyg>
+    <trumbowyg [togglePreview]="showPreview" [initialContent]="initialContent" [update]="update$" (savedContent)="content=$event" [liveUpdate]="false"></trumbowyg>
     <button (click)="showPreview=!showPreview">Toggle Preview</button>
     <button (click)="update$.next();showPreview=true">update content with observable</button>
     <h2>Preview Mode {{showPreview ? 'On':'Off'}}</h2>
@@ -18,6 +18,6 @@ import {Trumbowyg} from "ng2-lazy-trumbowyg";
 export class AppComponent {
     private content: string;
     private showPreview: boolean = false;
-    private initialContent: string = `<h2>This is an initial title.</h2><p>This is an initial content.</p><p><img src="https://angular.io/resources/images/logos/standard/shield-large.png" alt=""><br></p><p><br></p>`
+    private initialContent: string = `<h2>This is an initial title.</h2><p>This is an initial content.</p><p><img src="https://angular.io/resources/images/logos/standard/shield-large.png" alt=""><br></p><p><br></p>`;
     update$: Subject<any> = new Subject();
 }
